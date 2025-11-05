@@ -8,5 +8,5 @@ Thanks for stopping by!
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/anuksandhu/).
 
 
-![Visitor Badge](https://img.shields.io/badge/visitors-1-blue)
+![Visitor Badge](https://img.shields.io/badge/visitors-2-blue)
 
