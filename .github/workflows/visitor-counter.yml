@@ -1,0 +1,41 @@
+name: Visitor Counter
+
+on:
+  schedule:
+    # Run this action once every day to update the counter
+    - cron: '0 11 * * *'  # This runs at 11am UTC
+  workflow_dispatch:  # Allows the action to be triggered manually
+
+jobs:
+  update_visitor_count:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read counter
+        id: read_counter
+        run: |
+          COUNTER=$(cat counter.json | jq .visitor_count)
+          echo "COUNTER=$COUNTER" >> $GITHUB_ENV
+
+      - name: Increment counter
+        run: |
+          NEW_COUNTER=$((COUNTER + 1))
+          echo "{\"visitor_count\": $NEW_COUNTER}" > counter.json
+          echo "Updated visitor count to $NEW_COUNTER"
+
+      - name: Update README with new visitor count
+        run: |
+          sed -i "s|!\\[Visitor Badge\\](.*)|![Visitor Badge](https://img.shields.io/badge/visitors-${NEW_COUNTER}-blue)|g" README.md
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add counter.json README.md
+          git commit -m "Update visitor count to ${NEW_COUNTER}"
+          git push
+
+      - name: Clean up
+        run: |
+          rm counter.json
+
