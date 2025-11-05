@@ -1,4 +1,4 @@
-## Hi there ![Visitor Badge](https://img.shields.io/badge/visitors-0-blue) 👋
+## Hi there 👋
 
 Thanks for stopping by!
 
@@ -6,3 +6,5 @@ Thanks for stopping by!
 - 🌱 I’m constantly learning about emerging technologies, AI/ML tools and related applications.
 - 👯 I’m looking to collaborate on bulding innovative and practical solutions for our professional and personal lives.
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/anuksandhu/).
+
+![Visitor Badge](https://img.shields.io/badge/visitors-0-blue) 
