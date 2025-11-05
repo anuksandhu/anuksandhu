@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi there ![Visitor Badge](https://img.shields.io/badge/visitors-0-blue) 👋
 
 Thanks for stopping by!
 
